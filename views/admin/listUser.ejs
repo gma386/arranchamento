@@ -1,0 +1,44 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+    <div class="card mx-5 my-3">
+        <div class="card-header ">
+            Criar Esquadrão
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Login</th>
+                    <th>Graduação</th>
+                    <th>Nome</th>
+                    <th>Pelotão</th>
+                    <th>Esquadrão</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% users.forEach(user => { %>
+                    <tr>
+                      <td><%= user.id %></td>
+                      <td><%= user.login %></td>
+                      <td><%= user.patente %></td>
+                      <td><%= user.nome %></td>
+                      <td><%= user.platoon.nome %></td>
+                      <td><%= user.platoon.esquad.nome %></td>
+                    </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+            </form>
+        </div>
+      </div>
+</div>
+
+
+
+<%- include('../partials/footer.ejs') %>
+
+
+    

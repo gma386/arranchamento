@@ -1,0 +1,38 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+<div class="container">
+    <div class="card mx-5 my-3">
+        <div class="card-header ">
+            Criar Esquadrão
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% esquads.forEach(esquad => { %>
+                    <tr>
+                      <td><%= esquad.id %></td>
+                      <td><%= esquad.nome %></td>
+                      <form action="/admin/esquad/delete" method="post">
+                       <td> <input type="submit" value="Delete"></td>
+                        <input type="hidden" value="<%= esquad.id %>" name="id" class="hidden">
+                      </form>
+                    </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+        </div>
+      </div>
+</div>
+
+
+<%- include('../partials/footer.ejs') %>
+
+
+    
